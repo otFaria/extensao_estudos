@@ -36,12 +36,12 @@ Antes de carregar a extensão, gere os ícones:
 ## ✨ Funcionalidades
 
 ### 🗂️ Painel Lateral Persistente
-- Abre ao clicar no ícone da extensão ou com `Ctrl+Shift+S`
+- Abre ao clicar no ícone da extensão ou com `Ctrl+Shift+U`
 - Fica sempre visível ao lado da página
 - Chat completo com histórico e suporte a markdown
 
-### ⚡ Chat Rápido (Ctrl+J)
-- Pressione `Ctrl+J` em qualquer página
+### ⚡ Chat Rápido (Ctrl+Shift+Y)
+- Pressione `Ctrl+Shift+Y` em qualquer página
 - Modal centralizado com resposta rápida da IA
 - Feche com `Escape` ou clicando fora
 
@@ -82,10 +82,19 @@ Antes de carregar a extensão, gere os ícones:
 
 | Atalho | Ação |
 |--------|------|
-| `Ctrl+J` | Abrir chat rápido |
-| `Ctrl+Shift+S` | Abrir/fechar painel lateral |
+| `Ctrl+Shift+Y` | Abrir chat rápido |
+| `Ctrl+Shift+U` | Abrir/fechar painel lateral |
 
 > Para personalizar atalhos: `chrome://extensions/shortcuts`
+
+## ☁️ Sincronização em Nuvem (Supabase)
+
+O StudyMind possui integração com o Supabase para autenticação e sincronização na nuvem.
+
+1. Crie um projeto no [Supabase](https://supabase.com)
+2. Execute o script `database_setup.sql` no SQL Editor do Supabase
+3. Adicione a **URL** e **Chave Pública (Anon)** do Supabase nas Configurações da extensão
+4. Faça login ou crie sua conta diretamente pela extensão para sincronizar seus dados
 
 ## 🔒 Segurança
 
@@ -106,6 +115,9 @@ studymind-extension/
 ├── background.js          # Service Worker
 ├── content.js             # Script injetado nas páginas
 ├── content.css            # Estilos do tooltip e quick chat
+├── database_setup.sql     # Setup do banco de dados no Supabase
+├── memoryManager.js       # Gerenciamento de memória e sync
+├── supabaseClient.js      # Cliente de conexão com Supabase
 ├── popup/
 │   ├── popup.html         # Popup da extensão
 │   ├── popup.js           # Lógica do popup
