@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyMind AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup">
+    <div class="popup-header">
+      <div class="popup-logo">
+        <span class="popup-logo-icon">🧠</span>
+        <span class="popup-logo-text">StudyMind</span>
+        <span class="popup-logo-badge">AI</span>
+      </div>
+    </div>
+
+    <div class="popup-body">
+      <p class="popup-desc">Assistente de estudos com IA sempre ao seu lado.</p>
+
+      <div class="popup-actions">
+        <button class="popup-btn popup-btn-primary" id="btn-open-panel">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="2" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><line x1="10" y1="2" x2="10" y2="14" stroke="currentColor" stroke-width="1.5"/></svg>
+          Abrir Painel Lateral
+        </button>
+        <button class="popup-btn" id="btn-analyze">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Analisar esta Página
+        </button>
+        <button class="popup-btn" id="btn-settings">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Configurações
+        </button>
+      </div>
+    </div>
+
+    <div class="popup-auth" id="popup-auth" style="display: none;">
+      <p class="popup-desc" style="margin-bottom: 16px;">Faça login para sincronizar sua memória e chat na nuvem.</p>
+      
+      <div class="auth-tabs" style="display: flex; gap: 8px; margin-bottom: 12px;">
+        <button class="auth-tab active" id="tab-login" style="flex: 1; padding: 6px; border-radius: 6px; border: none; background: var(--bg-surface-3); color: var(--text-primary); cursor: pointer; font-size: 13px;">Login</button>
+        <button class="auth-tab" id="tab-register" style="flex: 1; padding: 6px; border-radius: 6px; border: none; background: transparent; color: var(--text-secondary); cursor: pointer; font-size: 13px;">Cadastrar</button>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 12px;">
+        <input type="email" id="auth-email" class="form-input" placeholder="Seu e-mail" style="width: 100%; padding: 8px 12px; background: var(--bg-surface-2); border: 1px solid var(--border); border-radius: 6px; color: var(--text-primary); font-size: 13px;" />
+      </div>
+      
+      <div class="form-group" style="margin-bottom: 16px;">
+        <input type="password" id="auth-password" class="form-input" placeholder="Sua senha" style="width: 100%; padding: 8px 12px; background: var(--bg-surface-2); border: 1px solid var(--border); border-radius: 6px; color: var(--text-primary); font-size: 13px;" />
+      </div>
+
+      <button class="popup-btn popup-btn-primary" id="btn-auth-submit" style="width: 100%; justify-content: center;">
+        Entrar
+      </button>
+      
+      <div id="auth-error" style="color: #ef4444; font-size: 12px; margin-top: 10px; text-align: center; display: none;"></div>
+    </div>
+
+    <div class="popup-footer">
+      <div class="popup-shortcuts">
+        <div class="shortcut"><kbd>Ctrl</kbd><span>+</span><kbd>⇧</kbd><span>+</span><kbd>Y</kbd><span class="shortcut-label">Chat rápido</span></div>
+        <div class="shortcut"><kbd>Ctrl</kbd><span>+</span><kbd>⇧</kbd><span>+</span><kbd>U</kbd><span class="shortcut-label">Painel</span></div>
+      </div>
+      <div class="popup-version" style="display: flex; flex-direction: column; align-items: flex-end;">
+        <span>v1.0.0</span>
+        <button id="btn-logout" style="display: none; background: none; border: none; color: var(--error); cursor: pointer; font-size: 11px; margin-top: 4px;">Sair da Conta</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../supabaseClient.js"></script>
+
+  <script src="popup.js"></script>
+</body>
+</html>

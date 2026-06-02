@@ -1,0 +1,146 @@
+/* ============================================================
+   StudyMind AI — Popup Styles (popup.css)
+   ============================================================ */
+
+:root {
+  --bg-primary: #0f0f13;
+  --bg-surface: #1a1a24;
+  --bg-surface-2: #22222f;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  width: 320px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.popup-header {
+  padding: 16px 18px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.popup-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.popup-logo-icon {
+  font-size: 24px;
+  filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.4));
+}
+.popup-logo-text {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.popup-logo-badge {
+  font-size: 9px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent), #8b5cf6);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+/* Body */
+.popup-body {
+  padding: 16px 18px;
+}
+.popup-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.popup-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.popup-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 11px 14px;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.popup-btn:hover {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateY(-1px);
+}
+.popup-btn-primary {
+  background: linear-gradient(135deg, var(--accent), #7c3aed);
+  border-color: transparent;
+  color: white;
+  font-weight: 600;
+}
+.popup-btn-primary:hover {
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+  background: linear-gradient(135deg, #7c3aed, var(--accent));
+}
+
+/* Footer */
+.popup-footer {
+  padding: 12px 18px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.popup-shortcuts {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.shortcut {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.shortcut kbd {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 5px;
+  font-size: 10px;
+  font-family: inherit;
+  color: var(--text-secondary);
+}
+.shortcut-label {
+  margin-left: 8px;
+  color: var(--text-muted);
+}
+.popup-version {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-align: right;
+}

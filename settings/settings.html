@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyMind AI — Configurações</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <div class="settings-page">
+    <header class="settings-header">
+      <div class="settings-logo">
+        <span class="logo-icon">🧠</span>
+        <span class="logo-text">StudyMind AI</span>
+        <span class="logo-badge">Configurações</span>
+      </div>
+    </header>
+
+    <main class="settings-main">
+      <!-- API Keys Section -->
+      <section class="settings-section">
+        <div class="section-header">
+          <span class="section-icon">🔑</span>
+          <div>
+            <h2 class="section-title">Chaves de API</h2>
+            <p class="section-desc">Configure suas chaves para conectar aos provedores de IA.</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">OpenAI API Key</label>
+          <div class="input-with-toggle">
+            <input type="password" class="form-input api-key-input" id="key-openai" placeholder="sk-..." autocomplete="off">
+            <button class="toggle-visibility" data-target="key-openai" title="Mostrar/ocultar">👁</button>
+          </div>
+          <span class="form-hint">Obtenha em <a href="https://platform.openai.com/api-keys" target="_blank">platform.openai.com</a></span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Anthropic API Key</label>
+          <div class="input-with-toggle">
+            <input type="password" class="form-input api-key-input" id="key-anthropic" placeholder="sk-ant-..." autocomplete="off">
+            <button class="toggle-visibility" data-target="key-anthropic" title="Mostrar/ocultar">👁</button>
+          </div>
+          <span class="form-hint">Obtenha em <a href="https://console.anthropic.com/" target="_blank">console.anthropic.com</a></span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Google AI API Key</label>
+          <div class="input-with-toggle">
+            <input type="password" class="form-input api-key-input" id="key-google" placeholder="AIza..." autocomplete="off">
+            <button class="toggle-visibility" data-target="key-google" title="Mostrar/ocultar">👁</button>
+          </div>
+          <span class="form-hint">Obtenha em <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com</a></span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Groq API Key</label>
+          <div class="input-with-toggle">
+            <input type="password" class="form-input api-key-input" id="key-groq" placeholder="gsk_..." autocomplete="off">
+            <button class="toggle-visibility" data-target="key-groq" title="Mostrar/ocultar">👁</button>
+          </div>
+          <span class="form-hint">Obtenha em <a href="https://console.groq.com/" target="_blank">console.groq.com</a></span>
+        </div>
+      </section>
+
+      <!-- Model Selection -->
+      <section class="settings-section">
+        <div class="section-header">
+          <span class="section-icon">🤖</span>
+          <div>
+            <h2 class="section-title">Modelo Padrão</h2>
+            <p class="section-desc">Escolha o provedor e modelo de IA padrão.</p>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label class="form-label">Provedor</label>
+            <select class="form-select" id="select-provider">
+              <option value="openai">OpenAI</option>
+              <option value="anthropic">Anthropic</option>
+              <option value="google">Google AI</option>
+              <option value="groq">Groq</option>
+            </select>
+          </div>
+          <div class="form-group flex-1">
+            <label class="form-label">Modelo</label>
+            <select class="form-select" id="select-model">
+              <option value="gpt-4o">GPT-4o</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="model-info" id="model-info">
+          <div class="model-card">
+            <span class="model-card-icon">⚡</span>
+            <div>
+              <strong>GPT-4o</strong>
+              <span>Modelo mais avançado da OpenAI</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Preferences -->
+      <section class="settings-section">
+        <div class="section-header">
+          <span class="section-icon">⚙️</span>
+          <div>
+            <h2 class="section-title">Preferências</h2>
+            <p class="section-desc">Personalize o comportamento da extensão.</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Idioma padrão</label>
+          <select class="form-select" id="select-language">
+            <option value="pt-BR">Português (Brasil)</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="it">Italiano</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="zh">中文</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Tema</label>
+          <select class="form-select" id="select-theme">
+            <option value="dark">🌙 Escuro</option>
+            <option value="light">☀️ Claro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Temperatura da IA</label>
+          <div class="slider-row">
+            <input type="range" class="form-slider" id="slider-temperature" min="0" max="1" step="0.1" value="0.7">
+            <span class="slider-value" id="temperature-value">0.7</span>
+          </div>
+          <span class="form-hint">Menor = mais preciso e focado. Maior = mais criativo e variado.</span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-checkbox">
+            <input type="checkbox" id="check-autoopen" checked>
+            <span class="checkbox-mark"></span>
+            <span>Abrir painel ao iniciar o Chrome</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Perfil do Estudante -->
+      <section class="settings-section" id="profileSection">
+        <div class="section-header">
+          <span class="section-icon">👤</span>
+          <div>
+            <h2 class="section-title">Meu Perfil de Estudante</h2>
+            <p class="section-desc">A IA usa essas informações para personalizar as respostas.</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Seu nome</label>
+          <input type="text" class="form-input" id="profileName" placeholder="Ex: João" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Concurso alvo</label>
+          <input type="text" class="form-input" id="profileExam" placeholder="Ex: INSS 2025, Polícia Federal, TRT..." />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Matérias com dificuldade</label>
+          <input type="text" class="form-input" id="profileWeak" placeholder="Ex: gramática, juros compostos" />
+          <span class="form-hint">Separe por vírgula. A IA dará mais foco nisso.</span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Matérias que você domina</label>
+          <input type="text" class="form-input" id="profileStrong" placeholder="Ex: matemática básica" />
+          <span class="form-hint">Separe por vírgula. A IA não repetirá o básico nisso.</span>
+        </div>
+      </section>
+
+      <!-- Estatísticas -->
+      <section class="settings-section" id="statsSection">
+        <div class="section-header">
+          <span class="section-icon">📊</span>
+          <div>
+            <h2 class="section-title">Seu Progresso</h2>
+            <p class="section-desc">Resumo numérico do que a IA aprendeu sobre você.</p>
+          </div>
+        </div>
+        <div class="stats-grid" id="stats-grid">
+          <!-- Rendered by JS -->
+        </div>
+      </section>
+
+      <!-- Detalhes da Memória -->
+      <section class="settings-section" id="memoryDetailsSection">
+        <div class="section-header">
+          <span class="section-icon">🧠</span>
+          <div>
+            <h2 class="section-title">O Que a IA Sabe Sobre Mim</h2>
+            <p class="section-desc">Visualização detalhada do mapeamento de aprendizado.</p>
+          </div>
+        </div>
+        
+        <div class="memory-details-container" id="memory-details-container">
+          <!-- Rendered by JS -->
+          <div style="text-align: center; color: var(--text-muted); font-size: 13px; padding: 20px;">
+            Carregando memória...
+          </div>
+        </div>
+
+        <div class="memory-actions" style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border);">
+          <button id="btn-reset-memory" class="btn-danger" style="background: var(--bg-surface-3); border: 1px solid var(--border); color: var(--error); padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 13px; transition: all 0.2s;">
+            🗑️ Resetar memória da IA
+          </button>
+          <span class="form-hint" style="margin-top: 8px; display: block;">Aviso: Os dados ficam apenas no seu navegador e não são enviados a terceiros. Resetar apagará todo o histórico de aprendizado.</span>
+        </div>
+      </section>
+
+      <!-- Shortcuts Info -->
+      <section class="settings-section">
+        <div class="section-header">
+          <span class="section-icon">⌨️</span>
+          <div>
+            <h2 class="section-title">Atalhos de Teclado</h2>
+            <p class="section-desc">Acesse rapidamente as funções da extensão.</p>
+          </div>
+        </div>
+
+        <div class="shortcuts-list">
+          <div class="shortcut-item">
+            <span class="shortcut-desc">Chat rápido</span>
+            <div class="shortcut-keys"><kbd>Ctrl</kbd><span>+</span><kbd>J</kbd></div>
+          </div>
+          <div class="shortcut-item">
+            <span class="shortcut-desc">Abrir/fechar painel</span>
+            <div class="shortcut-keys"><kbd>Ctrl</kbd><span>+</span><kbd>Shift</kbd><span>+</span><kbd>S</kbd></div>
+          </div>
+        </div>
+        <span class="form-hint">Para alterar atalhos: chrome://extensions/shortcuts</span>
+      </section>
+
+      <!-- About -->
+      <section class="settings-section">
+        <div class="section-header">
+          <span class="section-icon">ℹ️</span>
+          <div>
+            <h2 class="section-title">Sobre</h2>
+          </div>
+        </div>
+        <div class="about-info">
+          <p><strong>StudyMind AI</strong> v1.0.0</p>
+          <p>Assistente de estudos com IA para Chrome.</p>
+          <p class="about-muted">Suas chaves de API são armazenadas localmente e nunca compartilhadas.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Save Bar -->
+    <div class="save-bar" id="save-bar">
+      <div class="save-bar-inner">
+        <span class="save-status" id="save-status">Alterações não salvas</span>
+        <button class="btn-save" id="btn-save">💾 Salvar Configurações</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../supabaseClient.js"></script>
+  <script src="../memoryManager.js"></script>
+  <script src="settings.js"></script>
+</body>
+</html>
